@@ -1,0 +1,124 @@
+.footer {
+  background-color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+.logo-footer {
+  flex: 1;
+  margin-left: 70px;
+  height: auto;
+}
+.logo-footer img {
+  width: 200px;
+}
+.logo-footer p {
+  color: #616161;
+  font-size: 14px;
+  margin-left: 15px;
+}
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+  justify-content: left;
+}
+.social-icons img {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 15px;
+}
+.footer-icon {
+  width: 320px;
+  flex-shrink: 0;
+}
+.available-icons {
+  display: flex;
+  gap: 12px;
+  justify-content: left;
+  margin-top: 10px;
+}
+.available-icons img {
+  width: 120px;
+  height: 100%;
+}
+.lakushop-contact {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0px;
+}
+.footer-column {
+  flex: 1;
+  min-width: 220px;
+}
+.footer-content,
+.footer-title {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 200px;
+}
+.footer-content a {
+  font-size: 1rem;
+  font-weight: lighter;
+  color: #4b4b4b;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 5px;
+  padding-top: 15px;
+}
+.footer-content a:hover {
+  text-decoration: underline;
+  text-decoration-color: #000;
+  text-underline-position: under;
+}
+.copy {
+  border-top: 1px solid #dedede;
+  padding: 20px;
+  text-align: center;
+  font-weight: bolder;
+  color: #7b7b7b;
+}
+
+@media (max-width: 768px) {
+  .logo-footer {
+    margin-left: 5px !important;
+  }
+  .footer-columns {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footer-icon {
+    margin-left: 20px;
+  }
+  .footer-column1,
+  .lakushop-contact {
+    margin-left: 10px !important;
+  }
+  .lakushop-contact {
+    padding: 20px;
+    font-size: 0.85rem;
+  }
+  .footer-title h4 {
+    margin-top: 30px;
+  }
+  .top-row,
+  .bottom-row {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .footer-content {
+    flex: 1;
+    min-width: 45%;
+  }
+  .footer-content {
+    gap: 8px;
+  }
+}

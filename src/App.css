@@ -1,0 +1,226 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+.product-slider {
+  margin-top: 90px;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+  background-color: #e7e7e7;
+  display: block;
+}
+h1 {
+  color: #333;
+}
+.product-slider img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+  z-index: 1;
+}
+main {
+  padding: 40px 20px;
+  top: 0;
+  margin: 0;
+  text-align: left;
+  background-color: #e7e7e7;
+  color: #000;
+}
+.catalog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 70px 60px;
+  margin-top: 50px;
+  padding-top: 0;
+}
+.catalog-header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+.catalog-header .view-all {
+  padding: 13px 25px;
+  background-color: #ffffff;
+  color: #070707;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  border: 1px solid #c1c1c1;
+  text-decoration: none;
+  font-weight: 600;
+}
+/* 
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+} */
+input {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+}
+.product-catalog {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: hidden;
+  gap: 40px;
+  padding: 0;
+  width: 100%;
+  margin-left: 70px;
+  justify-content: flex-start;
+  flex-direction: row;
+  /* overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none; */
+}
+/* .product-catalog::-webkit-scrollbar {
+  display: none;
+}
+.product-catalog::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+} */
+.product-section {
+  flex: 0 0 auto;
+  width: 350px;
+  background: #fff;
+  border: 1px solid #ececec;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 70px;
+  text-align: center;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+}
+.product-section img {
+  width: 70%;
+  object-fit: cover;
+  border-bottom: 1px solid #ececec;
+  margin-top: 10px;
+}
+.product-section h2 {
+  font-size: 1rem;
+  margin: 40px 0 20px;
+  color: #000;
+}
+.original-price {
+  text-decoration: line-through;
+  color: #888;
+  margin: 4px 0 0;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.discounted-price {
+  color: #e60000;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Responsive*/
+@media (max-width: 768px) {
+  .logo-footer {
+    margin-left: 20px !important;
+  }
+  .top-row .footer-title:last-child,
+  .bottom-row .footer-content:last-child {
+    margin-right: 0 !important;
+  }
+  .footer-columns {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    overflow-x: hidden;
+  }
+  .catalog-header h1 {
+    font-size: 1.1rem;
+    margin-left: -40px;
+  }
+  .catalog-header .view-all {
+    padding: 10px 10px;
+    background-color: #ffffff;
+    color: #070707;
+    cursor: pointer;
+    border-radius: 20px;
+    border: 1px solid #c1c1c1;
+    font-size: 0.6rem;
+    text-decoration: none;
+    text-align: center;
+    align-items: right;
+    margin-right: -70px;
+    font-weight: 600;
+  }
+  .product-catalog {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 0 20px;
+    margin-left: 20px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .product-catalog::-webkit-scrollbar {
+    display: none;
+  }
+  .product-section {
+    flex: 0 0 auto;
+    width: 150px;
+    scroll-snap-align: start;
+  }
+  .product-section img {
+    width: 70%;
+    object-fit: cover;
+    border-bottom: 1px solid #ececec;
+  }
+  .product-section h2 {
+    font-size: 0.7rem;
+    margin: 20px 0 10px;
+  }
+  .original-price {
+    margin: 4px 0 0;
+    font-size: 0.6rem;
+    margin-bottom: 5px;
+  }
+  .discounted-price {
+    color: #e60000;
+    margin: 0;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  .product-catalog {
+    scroll-snap-type: x mandatory;
+  }
+}
