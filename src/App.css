@@ -2,6 +2,9 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+}
+html,
+body {
   overflow-x: hidden;
 }
 .product-slider {
@@ -54,27 +57,6 @@ main {
   text-decoration: none;
   font-weight: 600;
 }
-/* 
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 300px;
-  text-align: center;
-} */
 input {
   display: block;
   margin: 10px 0;
@@ -143,7 +125,6 @@ input {
   margin-bottom: 10px;
 }
 
-/* Responsive*/
 @media (max-width: 768px) {
   .logo-footer {
     margin-left: 20px !important;

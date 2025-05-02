@@ -82,9 +82,18 @@
 .copy {
   border-top: 1px solid #dedede;
   padding: 20px;
+  font-size: 1rem;
   text-align: center;
   font-weight: bolder;
   color: #7b7b7b;
+}
+@media (max-width: 1024px) {
+  .footer-icon {
+    margin-right: 100px;
+  }
+  .footer-column {
+    margin-left: 90px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -98,6 +107,13 @@
   .footer-icon {
     margin-left: 20px;
   }
+  .footer-icon h4 {
+    font-size: 13px;
+  }
+  .available-icons img {
+    width: 100px;
+    height: 100%;
+  }
   .footer-column1,
   .lakushop-contact {
     margin-left: 10px !important;
@@ -108,17 +124,19 @@
   }
   .footer-title h4 {
     margin-top: 30px;
+    font-size: 13px;
   }
-  .top-row,
-  .bottom-row {
-    flex-direction: row;
-    justify-content: space-between;
+  .footer-column {
+    margin-left: 0;
   }
-  .footer-content {
+  .footer-content,
+  .footer-content a {
     flex: 1;
     min-width: 45%;
-  }
-  .footer-content {
+    font-size: 12px;
     gap: 8px;
+  }
+  .copy {
+    font-size: 0.7rem;
   }
 }

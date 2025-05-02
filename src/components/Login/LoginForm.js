@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import "./Login.css";
 
-function Login({ onClose }) {
+function LoginForm({ onClose, onSwitch }) {
   const [showPassword, setShowPassword] = useState(false);
   const [emailOrPhone, setEmailOrPhone] = useState("");
   const [password, setPassword] = useState("");
@@ -55,9 +55,7 @@ function Login({ onClose }) {
           "Masukkan Email yang valid / Nomor Handphone anda";
       }
     }
-
     setErrors(tempErrors);
-
     if (Object.keys(tempErrors).length === 0) {
       console.log("Instruksi reset dikirim!");
     }
@@ -104,7 +102,6 @@ function Login({ onClose }) {
         ) : (
           <>
             <h2>Log in / Masuk</h2>
-
             <label>Nomor HP / Email</label>
             <input
               type="text"
@@ -151,7 +148,10 @@ function Login({ onClose }) {
 
             {!submitted && (
               <p className="register-text">
-                Belum punya akun? <span className="highlight">Daftar</span>
+                Belum punya akun?{" "}
+                <span className="highlight" onClick={onSwitch}>
+                  <a>Daftar</a>
+                </span>
               </p>
             )}
           </>
@@ -161,4 +161,4 @@ function Login({ onClose }) {
   );
 }
 
-export default Login;
+export default LoginForm;

@@ -4,9 +4,9 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "./App.css";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Login from "./components/Login";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import ModalLogin from "./components/Login/ModalLogin";
 
 const products = [
   {
@@ -47,25 +47,27 @@ const products = [
   {
     id: 6,
     name: "LAKUEMAS – E-VOUCHER EMAS Nominal 10 Juta",
-    originalPrice: "Rp. 520.000",
-    discountedPrice: "Rp. 500.000",
+    originalPrice: "Rp. 10.250.000",
+    discountedPrice: "Rp. 10.095.000",
     img: "https://lakuemas.oss-ap-southeast-5.aliyuncs.com/ecommerce/product/Voucher-Nominal-10jt.png",
   },
   {
     id: 7,
     name: "LAKUEMAS – E-VOUCHER EMAS Nominal 50 Juta",
-    originalPrice: "Rp. 520.000",
-    discountedPrice: "Rp. 500.000",
+    originalPrice: "Rp. 50.990.000",
+    discountedPrice: "Rp. 50.000.000",
     img: "https://lakuemas.oss-ap-southeast-5.aliyuncs.com/ecommerce/product/Voucher-Nominal-50jt.png",
   },
 ];
 
 function App() {
-  const [showLogin, setShowLogin] = useState(false);
+  const [showLoginForm, setShowLoginForm] = useState(false);
+
   return (
     <div className="App">
-      <Header onUserClick={() => setShowLogin(true)} />
-      {showLogin && <Login onClose={() => setShowLogin(false)} />}
+      <Header onUserClick={() => setShowLoginForm(true)} />
+      {showLoginForm && <ModalLogin onClose={() => setShowLoginForm(false)} />}
+
       <Swiper
         modules={[Autoplay]}
         spaceBetween={0}
@@ -95,7 +97,6 @@ function App() {
       </Swiper>
 
       <main>
-        {/* PRODUK */}
         <header className="catalog-header">
           <h1>Produk Terbaru untuk Kamu</h1>
           <a href="/all-products" className="view-all">

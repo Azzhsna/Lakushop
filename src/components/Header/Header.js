@@ -43,7 +43,13 @@ function Header({ onUserClick }) {
           <a href="#" onClick={closeMenu}>
             Transactions
           </a>
-          <a href="#" onClick={closeMenu}>
+          <a
+            href="#"
+            onClick={() => {
+              onUserClick();
+              closeMenu();
+            }}
+          >
             Profile
           </a>
         </nav>
@@ -60,12 +66,6 @@ function Header({ onUserClick }) {
             onClick={onUserClick}
           />
         </div>
-
-        {/* <div className="hamburger" onClick={toggleMenu}>
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </div> */}
       </div>
     </header>
   );

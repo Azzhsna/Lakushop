@@ -23,7 +23,8 @@
 }
 .nav-desktop {
   display: flex;
-  gap: 16vh;
+  gap: 15vh;
+  margin-left: -100px;
 }
 .nav-desktop a {
   position: relative;
@@ -55,20 +56,17 @@
   align-items: center;
   margin-right: 10vh;
 }
-
 .icon {
   font-size: 20px;
   cursor: pointer;
   color: #000;
 }
-
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
 }
-
 .bar {
   width: 25px;
   height: 3px;
@@ -78,7 +76,21 @@
 .hamburger {
   display: none;
 }
-
+/* @media (max-width: 1440px) {
+  .nav-desktop {
+    gap: 6vh;
+  }
+  .header-actions {
+    display: flex;
+    gap: 60px;
+    margin-right: 5vh;
+  }
+} */
+@media (max-width: 1024px) {
+  .nav-desktop {
+    gap: 6vh;
+  }
+}
 @media (max-width: 768px) {
   .header-container {
     margin-left: -40px;
@@ -89,6 +101,7 @@
   .header-actions {
     display: flex;
     gap: 16px;
+    margin-right: 12vh;
   }
   .header-actions .icon:nth-child(2) {
     display: none;
@@ -101,8 +114,8 @@
     height: 20px;
     cursor: pointer;
     position: absolute;
-    top: 50%;
-    right: 20px;
+    top: 55%;
+    right: 25px;
     transform: translateY(-50%);
   }
   .hamburger .bar {
