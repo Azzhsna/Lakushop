@@ -126,19 +126,6 @@ input {
 }
 
 @media (max-width: 768px) {
-  .logo-footer {
-    margin-left: 20px !important;
-  }
-  .top-row .footer-title:last-child,
-  .bottom-row .footer-content:last-child {
-    margin-right: 0 !important;
-  }
-  .footer-columns {
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 20px;
-    box-sizing: border-box;
-  }
   html,
   body {
     overflow-x: hidden;
@@ -146,6 +133,9 @@ input {
   .catalog-header h1 {
     font-size: 1.1rem;
     margin-left: -40px;
+  }
+  .catalog-header {
+    margin-top: 0px;
   }
   .catalog-header .view-all {
     padding: 10px 10px;
@@ -159,6 +149,7 @@ input {
     text-align: center;
     align-items: right;
     margin-right: -70px;
+
     font-weight: 600;
   }
   .product-catalog {
@@ -171,6 +162,8 @@ input {
     margin-left: 20px;
     -ms-overflow-style: none;
     scrollbar-width: none;
+    margin-top: -30px;
+    margin-bottom: -50px;
   }
   .product-catalog::-webkit-scrollbar {
     display: none;

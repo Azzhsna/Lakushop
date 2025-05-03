@@ -98,7 +98,20 @@
 
 @media (max-width: 768px) {
   .logo-footer {
-    margin-left: 5px !important;
+    margin-left: 10px !important;
+  }
+  .logo-footer p {
+    font-size: 12px;
+  }
+  .top-row .footer-title:last-child,
+  .bottom-row .footer-content:last-child {
+    margin-right: 0 !important;
+  }
+  .footer-columns {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
   }
   .footer-columns {
     flex-direction: column;

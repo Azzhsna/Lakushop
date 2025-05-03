@@ -130,21 +130,26 @@ label {
 .register-text a:hover {
   text-decoration: underline;
 }
-
-@media (max-width: 480px) {
+@media (max-width: 710px) {
   .login-container {
-    width: 80%;
+    width: 70%;
     min-width: unset;
     padding: 1.5rem;
   }
+  .login-container h2 {
+    font-size: 1rem;
+  }
   .login-container input {
-    width: 90%;
-    padding: 10px;
-    font-size: 13px;
+    width: 85%;
+    padding: 8px;
+    font-size: 12px;
+  }
+  label {
+    font-size: 0.8rem;
   }
   .login-btn {
-    padding: 12px;
-    font-size: 14px;
+    padding: 10px;
+    font-size: 12px;
     margin-top: 15px;
   }
   .close-button {
@@ -152,21 +157,56 @@ label {
     font-size: 1.5rem;
   }
   .toggle-icon {
-    right: 30px;
-    top: 10px;
+    right: 40px;
+    top: 17px;
   }
   .forgot-password,
   .register-text {
-    font-size: 14px;
+    font-size: 12px;
+  }
+  .Register-form {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .register-text {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 600;
+  }
+}
+@media (max-width: 480px) {
+  .login-container {
+    width: 70%;
+    min-width: unset;
+    padding: 1.5rem;
   }
   .login-container h2 {
-    font-size: 1.3rem;
-    margin-bottom: 50px;
+    font-size: 1rem;
+  }
+  .login-container input {
+    width: 85%;
+    padding: 8px;
+    font-size: 12px;
   }
   label {
-    font-size: 0.9rem;
-  }
-  input::placeholder {
     font-size: 0.8rem;
+  }
+  .login-btn {
+    padding: 10px;
+    font-size: 12px;
+    margin-top: 15px;
+  }
+  .close-button {
+    right: 1rem;
+    font-size: 1.5rem;
+  }
+  .toggle-icon {
+    right: 40px;
+    top: 17px;
+  }
+  .forgot-password,
+  .register-text {
+    font-size: 12px;
   }
 }
