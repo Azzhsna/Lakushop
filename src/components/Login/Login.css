@@ -140,7 +140,7 @@ label {
     font-size: 1rem;
   }
   .login-container input {
-    width: 85%;
+    width: 90%;
     padding: 8px;
     font-size: 12px;
   }
@@ -157,7 +157,7 @@ label {
     font-size: 1.5rem;
   }
   .toggle-icon {
-    right: 40px;
+    right: 35px;
     top: 17px;
   }
   .forgot-password,
@@ -185,7 +185,7 @@ label {
     font-size: 1rem;
   }
   .login-container input {
-    width: 85%;
+    width: 90%;
     padding: 8px;
     font-size: 12px;
   }
@@ -202,7 +202,7 @@ label {
     font-size: 1.5rem;
   }
   .toggle-icon {
-    right: 40px;
+    right: 25px;
     top: 17px;
   }
   .forgot-password,

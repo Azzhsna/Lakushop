@@ -4,61 +4,78 @@ import "./Login.css";
 
 function LoginForm({ onClose, onSwitch }) {
   const [showPassword, setShowPassword] = useState(false);
-  const [emailOrPhone, setEmailOrPhone] = useState("");
-  const [password, setPassword] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [loginData, setLoginData] = useState({
+    emailOrPhone: "",
+    password: "",
+  });
+  const [forgotInput, setForgotInput] = useState("");
   const [errors, setErrors] = useState({});
   const [authError, setAuthError] = useState("");
   const [isForgotPassword, setIsForgotPassword] = useState(false);
-  const [forgotInput, setForgotInput] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
-  const validateInput = () => {
-    const tempErrors = {};
+  const handleInputChange = (e) => {
+    setLoginData({ ...loginData, [e.target.name]: e.target.value });
+    setErrors({});
+  };
+
+  const handleForgotChange = (e) => {
+    setForgotInput(e.target.value);
+    setErrors({});
+  };
+
+  const isValidEmailOrPhone = (value) => {
+    const isGmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(value);
+    const isPhone = /^(\+62|0)8[1-9][0-9]{6,9}$/.test(value);
+    return isGmail || isPhone;
+  };
+
+  const validateLogin = () => {
+    const { emailOrPhone, password } = loginData;
+    const newErrors = {};
+
     setAuthError("");
+    setSubmitted(true);
 
     if (!emailOrPhone.trim()) {
-      tempErrors.emailOrPhone = "This field is required";
-    } else {
-      const isGmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(emailOrPhone);
-      const isPhone = /^(\+62|0)8[1-9][0-9]{6,9}$/.test(emailOrPhone);
-      if (!isGmail && !isPhone) {
-        tempErrors.emailOrPhone =
-          "Masukkan Email yang valid / Nomor Handphone anda";
-      }
+      newErrors.emailOrPhone = "This field is required";
+    } else if (!isValidEmailOrPhone(emailOrPhone)) {
+      newErrors.emailOrPhone =
+        "Masukkan Email yang valid / Nomor Handphone anda";
     }
 
     if (!password.trim()) {
-      tempErrors.password = "This field is required";
+      newErrors.password = "This field is required";
     }
 
-    setErrors(tempErrors);
-    setSubmitted(true);
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
 
-    if (Object.keys(tempErrors).length === 0) {
-      if (emailOrPhone === "user@gmail.com" && password === "password123") {
-        console.log("Login berhasil!");
-      } else {
-        setAuthError("Username dan password tidak cocok!");
-      }
+    if (emailOrPhone === "user@gmail.com" && password === "password123") {
+      console.log("Login berhasil!");
+    } else {
+      setAuthError("Username dan password tidak cocok!");
     }
   };
 
   const validateForgotPassword = () => {
-    const tempErrors = {};
+    const newErrors = {};
+
     if (!forgotInput.trim()) {
-      tempErrors.forgotInput = "This field is required";
-    } else {
-      const isGmail = /^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(forgotInput);
-      const isPhone = /^(\+62|0)8[1-9][0-9]{6,9}$/.test(forgotInput);
-      if (!isGmail && !isPhone) {
-        tempErrors.forgotInput =
-          "Masukkan Email yang valid / Nomor Handphone anda";
-      }
+      newErrors.forgotInput = "This field is required";
+    } else if (!isValidEmailOrPhone(forgotInput)) {
+      newErrors.forgotInput =
+        "Masukkan Email yang valid / Nomor Handphone anda";
     }
-    setErrors(tempErrors);
-    if (Object.keys(tempErrors).length === 0) {
-      console.log("Instruksi reset dikirim!");
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
     }
+
+    console.log("Instruksi reset dikirim!");
   };
 
   return (
@@ -74,12 +91,10 @@ function LoginForm({ onClose, onSwitch }) {
             <label>Nomor HP / Email</label>
             <input
               type="text"
+              name="forgotInput"
               placeholder="Masukkan Nomor HP / Email"
               value={forgotInput}
-              onChange={(e) => {
-                setForgotInput(e.target.value);
-                setErrors({});
-              }}
+              onChange={handleForgotChange}
             />
             {errors.forgotInput && (
               <p className="error">{errors.forgotInput}</p>
@@ -102,12 +117,14 @@ function LoginForm({ onClose, onSwitch }) {
         ) : (
           <>
             <h2>Log in / Masuk</h2>
+
             <label>Nomor HP / Email</label>
             <input
               type="text"
+              name="emailOrPhone"
               placeholder="Masukkan Nomor HP / Email"
-              value={emailOrPhone}
-              onChange={(e) => setEmailOrPhone(e.target.value)}
+              value={loginData.emailOrPhone}
+              onChange={handleInputChange}
             />
             {errors.emailOrPhone && (
               <p className="error">{errors.emailOrPhone}</p>
@@ -117,9 +134,10 @@ function LoginForm({ onClose, onSwitch }) {
             <div className="password-wrapper">
               <input
                 type={showPassword ? "text" : "password"}
+                name="password"
                 placeholder="Masukkan Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
+                value={loginData.password}
+                onChange={handleInputChange}
               />
               <span
                 className="toggle-icon"
@@ -129,10 +147,9 @@ function LoginForm({ onClose, onSwitch }) {
               </span>
             </div>
             {errors.password && <p className="error">{errors.password}</p>}
-
             {authError && <p className="error">{authError}</p>}
 
-            <button onClick={validateInput} className="login-btn">
+            <button onClick={validateLogin} className="login-btn">
               Login
             </button>
 
